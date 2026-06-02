@@ -169,8 +169,7 @@
   }
 
   .navbar__links--open {
-    height: auto;
-    padding: 20px 0;
+    max-height: 500px;
   }
 
   .navbar__links li {
@@ -180,5 +179,14 @@
     border-bottom: 1px solid rgba(255,255,255,0.04);
   }
 
-  .navbar__links a { font-size: 0.9rem; }
+
+  .navbar__links a { font-size: 0.85rem; }
+
+  /* Shrink logo on mobile */
+  .logo-main { font-size: 1.2rem; }
+  .logo-sub  { font-size: 0.7rem; }
+
+   /* Hide GET IN TOUCH button from nav on mobile to save space */
+  .navbar__cta { display: none; }
+  
 }

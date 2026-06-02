@@ -396,9 +396,108 @@
 }
 
 @media (max-width: 768px) {
-  .hero__content { padding-top: 80px; }
-  .hero__stats { gap: 24px; flex-wrap: wrap; }
-  .hero__actions { flex-direction: column; align-items: flex-start; }
-  .hero__tagline { flex-direction: column; gap: 8px; }
-  .tagline__line { display: none; }
+  .hero {
+    min-height: 100svh; /* use svh for mobile browsers with address bar */
+    padding-top: var(--nav-h);
+  }
+
+  .hero__content {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ticker smaller on mobile */
+  .ticker__group {
+    font-size: 0.58rem;
+    gap: 14px;
+    padding-right: 14px;
+  }
+
+  /* Badge */
+  .hero__badge {
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+  }
+
+  /* Title */
+  .hero__title-line--1,
+  .hero__title-line--2 {
+    font-size: clamp(4rem, 22vw, 6rem);
+    text-align: center;
+  }
+
+  /* Tagline */
+  .hero__tagline {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero__tagline p {
+    font-size: 0.9rem;
+  }
+
+  .tagline__line {
+    flex: 0 0 30px;
+  }
+
+  /* Description */
+  .hero__desc {
+    font-size: 0.88rem;
+    text-align: center;
+    padding: 0 8px;
+    margin-bottom: 32px;
+  }
+
+  .hero__desc br { display: none; } /* no forced line breaks on mobile */
+
+  /* Buttons */
+  .hero__actions {
+    flex-direction: row;        /* keep side by side if they fit */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 44px;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.75rem;
+  }
+
+  /* Stats */
+  .hero__stats {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .stat__num  { font-size: 1.8rem; }
+  .stat__label { font-size: 0.55rem; }
+
+  /* Divider between stats */
+  .stat + .stat::before {
+    display: none; /* remove vertical dividers on mobile */
+  }
+
+  /* Scroll indicator */
+  .hero__scroll { display: none; }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+  .hero__title-line--1,
+  .hero__title-line--2 {
+    font-size: 18vw;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn { width: 100%; justify-content: center; }
 }
